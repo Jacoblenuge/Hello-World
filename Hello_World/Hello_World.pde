@@ -1,5 +1,6 @@
 //Global Variables
 int appWidth, appHeight;
+float centerX, centerY, XStart, YStart,widthRect,heightRect;
 //
 void setup() {
   //Declaring Display Geometry: landscape, square, portrait
@@ -25,6 +26,13 @@ void setup() {
       //Empty ELSE
     }
   }
+  //population
+  centerX=width * 1/2 ;
+  centerY= height *1/2 ;
+  xStart=;
+  yStart= ;
+  widthRect= ;
+  heightRect= ;
 } //End setup
 //
 void draw() {
@@ -40,6 +48,8 @@ rect(120, 80, 220, 220);
   triangle(898,209,936,311,206,862);
   triangle(629,309,346,357,368,755);
   triangle(528,689,131,470,870,942);
+  rect(700, 800, 820, 920);
+  rect(XStart, YStart,widthRect,heightRect);
 }   //End draw
 //
 void keyPressed() {
