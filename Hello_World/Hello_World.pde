@@ -1,6 +1,8 @@
 //Global Variables
 int appWidth, appHeight;
-float centerX, centerY, XStart, YStart,widthRect,heightRect;
+float centerX, centerY, xStart, yStart, widthRect, heightRect;
+color blackNightMode=#000000, red=#FA0D0D, green=#50FC08, white=#FFFFFF; //Hexidecimal
+float thin, normal , thick;
 //
 void setup() {
   //Declaring Display Geometry: landscape, square, portrait
@@ -26,32 +28,35 @@ void setup() {
       //Empty ELSE
     }
   }
-  //population
-  centerX=width * 1/2 ;
-  centerY= height *1/2 ;
-  xStart=;
-  yStart= ;
-  widthRect= ;
-  heightRect= ;
+  //Population
+  centerX = appWidth * 1/2;
+  centerY = height * 1/2;
+  xStart = centerX - (appWidth * 1/4 );
+  yStart  = centerY - ( height * 1/4 );
+  widthRect =appWidth * 2/4;
+  heightRect = height * 1/4;
+   thin=appWidth / appWidth; //1
+   normal= appWidth * 1/70; 
+   thick= appWidth * 1/35;
 } //End setup
 //
 void draw() {
-rect(120, 80, 220, 220);
-  ellipse(200,200,100,120);
-  triangle(560,400,437,800,434,700);
-  triangle(783,340,349,344,357,576);
-  triangle(176,348,703,277,877,108);
-  triangle(878,191,995,777,767,553);
-  triangle(585,757,700,462,184,918);
-  triangle(676,992,495,119,539,782);
-  triangle(907,810,238,692,490,788);
-  triangle(898,209,936,311,206,862);
-  triangle(629,309,346,357,368,755);
-  triangle(528,689,131,470,870,942);
-  rect(700, 800, 820, 920);
-  rect(XStart, YStart,widthRect,heightRect);
-}   //End draw
-//
+  //New backround Function "covers" old Gray Scale background()
+  //Night Mode means background cannot have blue//change randome for night mode, hard code "0"
+  background (100);//Gray Scale(0-255) & Blue Issue for night mode
+  //
+  //Casting Reminder
+  background( color(random(0,255),random(0,255),random(0,255) )); // Colour without blue
+  //
+  //background( blackNightMode );
+  strokeWeight(thick);
+  stroke( red);
+  fill(green);
+  rect(xStart, yStart, widthRect, heightRect);
+  fill(white); //default reset
+  stroke(blackNightMode); // default reset
+  strokeWeight(1); // default reset
+}//
 void keyPressed() {
 } //End keyPressed
 //
