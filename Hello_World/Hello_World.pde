@@ -2,7 +2,9 @@
 int appWidth, appHeight;
 float centerX, centerY, xStart, yStart, widthRect, heightRect;
 color blackNightMode=#000000, red=#FA0D0D, green=#50FC08, white=#FFFFFF; //Hexidecimal
+color greenNightMode=#00FF00 ,redNightMode=#FF0800;
 float thin, normal , thick;
+Boolean nightMode=false, randomBackgroubd=false;
 //
 void setup() {
   //Declaring Display Geometry: landscape, square, portrait
@@ -50,8 +52,8 @@ void draw() {
   //
   //background( blackNightMode );
   strokeWeight(thick);
-  stroke( red);
-  fill(green);
+  stroke( red);//redNightMode
+  fill(green);//greenNightMode
   rect(xStart, yStart, widthRect, heightRect);
   fill(white); //default reset
   stroke(blackNightMode); // default reset
